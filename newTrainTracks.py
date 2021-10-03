@@ -124,7 +124,7 @@ class Train:
             if l:
                 x,y = pygame.mouse.get_pos()
                 box_size = self.pixel_size*self.scale
-                i,j = int((x-self.buffer)/box_size),int((self.total_size-self.buffer-y)/box_size)
+                i,j = (x-self.buffer)//box_size,(self.total_size-self.buffer-y)//box_size
 
                 if 0<=i<self.size and 0<=j<self.size:
                     next_val = self.track_types[(self.track_types.index(self.grid[i][j])+1)%7]
